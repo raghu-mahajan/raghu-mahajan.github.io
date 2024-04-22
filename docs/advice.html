@@ -126,9 +126,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>Here is some advice for PhD students in high-energy physics.</p>
-<p><span class="math display">\[
+<p><span id="eq-sch-metric"><span class="math display">\[
 d s^2 = - f(r) dt^2 + \frac{dr^2}{f(r)} + r^2 d\Omega_2^2
-\]</span></p>
+\tag{1}\]</span></span></p>
+<p>Black-Scholes (<a href="#eq-black-scholes">Equation&nbsp;2</a>) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:</p>
+<p><span id="eq-black-scholes"><span class="math display">\[
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
+\frac{\partial^{2} \mathrm C}{\partial \mathrm C^2}
+  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
+  \mathrm r \mathrm C
+\tag{2}\]</span></span></p>
+<span class="math display">\[\begin{align}
+d s^2 &amp;= - f(r) dt^2 + \frac{dr^2}{f(r)} + r^2 d\Omega_2^2 \\
+f(r) &amp;= 1- \frac{r_+}{r}
+\end{align}\]</span>
 
 
 

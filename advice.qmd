@@ -6,4 +6,20 @@ Here is some advice for PhD students in high-energy physics.
 
 $$
 d s^2 = - f(r) dt^2 + \frac{dr^2}{f(r)} + r^2 d\Omega_2^2
+$$ {#eq-sch-metric}
+
+Black-Scholes (@eq-black-scholes) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:
+
 $$
+\frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} \mathrm S^{2}
+\frac{\partial^{2} \mathrm C}{\partial \mathrm C^2}
+  + \mathrm r \mathrm S \frac{\partial \mathrm C}{\partial \mathrm S}\ =
+  \mathrm r \mathrm C 
+$$ {#eq-black-scholes}
+
+```{=tex}
+\begin{align}
+d s^2 &= - f(r) dt^2 + \frac{dr^2}{f(r)} + r^2 d\Omega_2^2 \\
+f(r) &= 1- \frac{r_+}{r}
+\end{align}
+```

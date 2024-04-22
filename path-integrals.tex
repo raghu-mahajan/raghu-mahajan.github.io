@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\renewcommand{\d}{\text{d}}
+\renewcommand{\i}{\text{i}}
+
+\begin{document}
+
+Perhaps the simplest quantum systems with a discrete spectrum are (a) a particle in a box and (b) a particle on a ring.
+The presence of Dirichlet walls in the particle in a box problem presents some difficulties and so,  for that reason,   the particle on a ring is the simplest system with a discrete spectrum that is amenable to a path integral treatment.
+
+Let $x$ be the coordinate on the ring,  which is identified with period $2\pi R$.
+In the Hamiltonian formalism,  we can simply find the eigenvalues and eigenvectors of the system.
+\begin{equation}
+\begin{aligned}
+H &= - \frac{1}{2} \frac{\d^2}{\d x^2} \\
+\psi_n(x) &=  \exp\left(\i  \frac{n}{R} x \right) \frac{1}{\sqrt{2\pi R}} \,,\quad n \in \mathbb{Z} \\
+E_n &= \frac{1}{2} \,  \frac{n^2}{R^2}\,.
+\end{aligned}
+\end{equation}
+The Hilbert space is infinite dimensional, there is a unique ground state with zero energy,  and all other energy levels are doubly degenerate.
+
+We would like to compute the thermal partition function of this system.
+Since we know the spectrum,  we can write down the answer
+\begin{align}
+Z(\beta) = \sum_n e^{-\beta E_n} = \sum_{n\in \mathbb{Z}} \exp \left( 
+- \beta \, \frac{n^2}{2R^2}
+\right) \, .
+\label{zbetaparticlering}
+\end{align}
+
+\end{document}
