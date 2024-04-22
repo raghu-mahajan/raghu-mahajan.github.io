@@ -7,10 +7,17 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
+    "objectID": "advice.html",
+    "href": "advice.html",
+    "title": "Advice",
+    "section": "",
+    "text": "Here is some advice for PhD students in high-energy physics.\n\\[\nd s^2 = - f(r) dt^2 + \\frac{dr^2}{f(r)} + r^2 d\\Omega_2^2\n\\]"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "raghu-mahajan.github.io",
+    "title": "Raghu Mahajan",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "I am Raghu Mahajan, a phyicist working in String Theory and Quantum Gravity."
   }
 ]

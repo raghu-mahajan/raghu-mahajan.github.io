@@ -1,0 +1,9 @@
+---
+title: "Advice"
+---
+
+Here is some advice for PhD students in high-energy physics.
+
+$$
+d s^2 = - f(r) dt^2 + \frac{dr^2}{f(r)} + r^2 d\Omega_2^2
+$$
