@@ -1,12 +1,5 @@
 ---
 title: "Raghu Mahajan"
-
-format:
-  html:
-    theme: cosmo
-    css: styles.css
-    toc: true
-    page-layout: full
 ---
 
 I am Raghu Mahajan, a physicist working in String Theory and Quantum Gravity. I am a Senior Research Scientist at Stanford University.
