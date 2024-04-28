@@ -1,11 +1,8 @@
-\documentclass{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
+---
+title: "Path Integrals in Quantum Mechanics"
+---
 
-\renewcommand{\d}{\text{d}}
-\renewcommand{\i}{\text{i}}
-
-\begin{document}
+Does the bookdown html document 2 work?
 
 Perhaps the simplest quantum systems with a discrete spectrum are (a) a particle in a box and (b) a particle on a ring.
 The presence of Dirichlet walls in the particle in a box problem presents some difficulties and so,  for that reason,   the particle on a ring is the simplest system with a discrete spectrum that is amenable to a path integral treatment.
@@ -18,6 +15,7 @@ H &= - \frac{1}{2} \frac{\d^2}{\d x^2} \\
 \psi_n(x) &=  \exp\left(\i  \frac{n}{R} x \right) \frac{1}{\sqrt{2\pi R}} \,,\quad n \in \mathbb{Z} \\
 E_n &= \frac{1}{2} \,  \frac{n^2}{R^2}\,.
 \end{aligned}
+\label{hamiltonian}
 \end{equation}
 The Hilbert space is infinite dimensional, there is a unique ground state with zero energy,  and all other energy levels are doubly degenerate.
 
@@ -29,5 +27,3 @@ Z(\beta) = \sum_n e^{-\beta E_n} = \sum_{n\in \mathbb{Z}} \exp \left(
 \right) \, .
 \label{zbetaparticlering}
 \end{align}
-
-\end{document}
