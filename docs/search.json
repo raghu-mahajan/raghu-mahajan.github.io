@@ -7,17 +7,17 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "advice.html",
-    "href": "advice.html",
-    "title": "Advice",
-    "section": "",
-    "text": "Here is some advice for PhD students in high-energy physics.\n\\[\nd s^2 = - f(r) dt^2 + \\frac{dr^2}{f(r)} + r^2 d\\Omega_2^2\n\\tag{1}\\]\nBlack-Scholes (Equation 2) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:\n\\[\n\\frac{\\partial \\mathrm C}{ \\partial \\mathrm t } + \\frac{1}{2}\\sigma^{2} \\mathrm S^{2}\n\\frac{\\partial^{2} \\mathrm C}{\\partial \\mathrm C^2}\n  + \\mathrm r \\mathrm S \\frac{\\partial \\mathrm C}{\\partial \\mathrm S}\\ =\n  \\mathrm r \\mathrm C\n\\tag{2}\\]\n\\[\\begin{align}\nd s^2 &= - f(r) dt^2 + \\frac{dr^2}{f(r)} + r^2 d\\Omega_2^2 \\\\\nf(r) &= 1- \\frac{r_+}{r} \\label{eq-frblackhole}\n\\end{align}\\]\nWe would like to compute the thermal partition function of this system. Since we know the spectrum, we can write down the answer \\[\\begin{align}\nZ(\\beta) = \\sum_n e^{-\\beta E_n} = \\sum_{n\\in \\mathbb{Z}} \\exp \\left(\n- \\beta \\, \\frac{n^2}{2R^2}\n\\right) \\, .\n\\label{zbetaparticlering}\n\\end{align}\\]"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Raghu Mahajan",
     "section": "",
-    "text": "I am Raghu Mahajan, a phyicist working in String Theory and Quantum Gravity."
+    "text": "I am Raghu Mahajan, a physicist working in String Theory and Quantum Gravity. I am a Senior Research Scientist at Stanford University."
+  },
+  {
+    "objectID": "advice.html",
+    "href": "advice.html",
+    "title": "Advice",
+    "section": "",
+    "text": "Here is some advice for PhD students in high-energy physics.\n\\[\nd s^2 = - f(r) dt^2 + \\frac{dr^2}{f(r)} + r^2 d\\Omega_2^2\n\\tag{1}\\]\nBlack-Scholes (Equation 2) is a mathematical model that seeks to explain the behavior of financial derivatives, most commonly options:\n\\[\n\\frac{\\partial \\mathrm C}{ \\partial \\mathrm t } + \\frac{1}{2}\\sigma^{2} \\mathrm S^{2}\n\\frac{\\partial^{2} \\mathrm C}{\\partial \\mathrm C^2}\n  + \\mathrm r \\mathrm S \\frac{\\partial \\mathrm C}{\\partial \\mathrm S}\\ =\n  \\mathrm r \\mathrm C\n\\tag{2}\\]\n\\[\\begin{align}\nd s^2 &= - f(r) dt^2 + \\frac{dr^2}{f(r)} + r^2 d\\Omega_2^2 \\\\\nf(r) &= 1- \\frac{r_+}{r} \\label{eq-frblackhole}\n\\end{align}\\]\nWe would like to compute the thermal partition function of this system. Since we know the spectrum, we can write down the answer\n\\[\\begin{align}\nZ(\\beta) = \\sum_n e^{-\\beta E_n} = \\sum_{n\\in \\mathbb{Z}} \\exp \\left(\n- \\beta \\, \\frac{n^2}{2R^2}\n\\right) \\, .\n\\label{zbetaparticlering}\n\\end{align}\\]"
   }
 ]

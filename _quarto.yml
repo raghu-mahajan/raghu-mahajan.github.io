@@ -19,8 +19,3 @@ format:
 
 editor: visual
 
-render:
-  latex:
-    engine: pdflatex
-    options: [--shell-escape]
-
