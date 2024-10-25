@@ -32,7 +32,7 @@
 .ltx_page_navbar {
     display: block!important;
     position: fixed; 
-    left: 20px; 
+    left: 0px; 
     top: 0px; 
     width: 200px;
     margin: 0em; 
