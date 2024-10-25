@@ -3,7 +3,7 @@
 .ltx_page_navbar {
     display:block!important;
     position:fixed; 
-    left:0px; 
+    left:20px; 
     top:0px; 
     width:200px;
     margin:0em; 
@@ -11,7 +11,7 @@
     font: bold 75% sans-serif; 
     border: 3px double;
     overflow-y: auto; 
-    max-height: 100vh; 
+    max-height: 95vh; 
     }
 
 .ltx_page_navbar ol,
