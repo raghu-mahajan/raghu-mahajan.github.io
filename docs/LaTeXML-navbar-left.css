@@ -14,19 +14,43 @@
     max-height: 95vh; 
 }*/
 
+/*.ltx_page_navbar {
+    display: block!important;
+    position: fixed; 
+    left: 20px; 
+    top: 0px; 
+    width: 250px;
+    margin: 0em; 
+    padding: 1em; 
+    font: bold 75% sans-serif;
+    background-color: #f0f0f5; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); 
+    overflow-y: auto; 
+    max-height: 95vh; 
+}*/
+
 .ltx_page_navbar {
     display: block!important;
     position: fixed; 
     left: 20px; 
     top: 0px; 
-    width: 200px;
+    width: 250px;
     margin: 0em; 
     padding: 1em; 
-    font: bold 75% sans-serif;
-    background-color: #f0f0f5; /* Light gray-blue background to stand out from white */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for a subtle 3D effect */
+    font: bold 75% sans-serif; 
+    background-color: #f0f0f5; /* Keeping the background for distinction */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for visual separation */
     overflow-y: auto; 
     max-height: 95vh; 
+}
+
+.ltx_page_main {
+    margin: 0 auto; /* Centers the container horizontally */
+    margin-left: calc(250px + 80px); /* Space the main content 40px away from the left navbar */
+    padding: min(1em, 1.5%) min(3em, 4.5%) min(1em, 1.5%) min(2em, 3%);
+    width: calc(100% - 240px); /* Available space to the right of the navbar, accounting for the gap */
+    max-width: 816px; /* Max width to match US Letter paper */
+    box-sizing: border-box; /* Ensure padding is included within the max width */
 }
 
 .ltx_page_navbar ol,
@@ -44,9 +68,22 @@
     color: #DC143C;
 }
 
-.ltx_page_main {
-    position:absolute; left:240px; top:0px; right:2px; 
+/*.ltx_page_main {
+    position:absolute; left:260px; top:0px; right:2px; 
     margin:0px; padding:1em 3em 1em 2em;
     padding:min(1em,1.5%) min(3em,4.5%) min(1em,1.5%) min(2em, 3%);
     width:70%; 
-  }
+  }*/
+
+
+/*.ltx_page_main {
+    position: absolute; 
+    left: 310px; 
+    top: 0px; 
+    right: 2px;
+    margin: 0px; 
+    padding: min(1em, 1.5%) min(3em, 4.5%) min(1em, 1.5%) min(2em, 3%);
+    width: 70%; 
+    max-width: 816px; 
+    box-sizing: border-box; 
+}*/
