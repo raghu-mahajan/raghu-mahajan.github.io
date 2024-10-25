@@ -92,3 +92,34 @@
     max-width: 816px; 
     box-sizing: border-box; 
 }*/
+
+@media (max-width: 768px) {
+    .ltx_page_navbar {
+        display: none; /* Hide the navigation bar on smaller screens */
+    }
+
+    .mobile-menu {
+        display: block; /* Show the mobile hamburger menu */
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 1em;
+        background-color: #4169E1; /* Same color as table of contents for consistency */
+        color: white;
+        cursor: pointer;
+        font-size: 1.5em;
+    }
+
+    /* Show the navbar when the hamburger menu is clicked */
+    .ltx_page_navbar.active {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #f0f0f5;
+        z-index: 10;
+        padding: 1em;
+    }
+}
