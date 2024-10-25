@@ -47,7 +47,7 @@
 
 .ltx_page_main {
     margin: 0 auto; /* Centers the container horizontally */
-    margin-left: calc(200px + 80px); /* Space the main content 40px away from the left navbar */
+    margin-left: calc(200px + 50px); /* Space the main content 40px away from the left navbar */
     padding: min(1em, 1.5%) min(3em, 4.5%) min(1em, 1.5%) min(2em, 3%);
     /*width: calc(100% - 240px); /* Available space to the right of the navbar, accounting for the gap */
     width: 70%;
