@@ -21,7 +21,7 @@
 
 .ltx_page_navbar ol li a {
     white-space: normal;
-    color: inherit; /* This will make the link take on the color of its parent element */
+    color: #4169E1; /* This will make the link take on the color of its parent element */
     text-decoration: none; /* Removes the underline */
 }
 
