@@ -21,13 +21,12 @@
 
 .ltx_page_navbar ol li a {
     white-space: normal;
-    /* color: #4169E1; /* Royal blue */
-    color: #333333; /* Dark grey */
+    color: #4169E1; /* Royal blue */
     text-decoration: none; /* Removes the underline */
 }
 
 .ltx_page_navbar a:hover {
-    color: red; /* Optional: Change color on hover to give feedback */
+    color: #DC143C;
 }
 
 .ltx_page_main {
