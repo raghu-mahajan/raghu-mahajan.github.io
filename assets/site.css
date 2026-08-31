@@ -139,25 +139,15 @@ a {
 .hero {
   min-height: calc(100vh - 79px);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.78fr);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.62fr);
   align-items: center;
-  gap: clamp(50px, 8vw, 112px);
-  padding-block: 72px 84px;
+  gap: clamp(48px, 7vw, 88px);
+  padding-block: 60px 72px;
 }
 
 .hero-copy {
   position: relative;
   z-index: 2;
-}
-
-.eyebrow,
-.project-kicker {
-  margin: 0 0 18px;
-  color: var(--teal);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 .hero h1,
@@ -170,16 +160,16 @@ a {
 }
 
 .hero h1 {
-  max-width: 680px;
-  font-size: clamp(68px, 9vw, 126px);
-  line-height: 0.82;
+  max-width: 560px;
+  font-size: clamp(50px, 6vw, 76px);
+  line-height: 0.92;
 }
 
 .role {
-  margin: 38px 0 5px;
+  margin: 28px 0 5px;
   color: var(--ink);
   font-family: var(--serif);
-  font-size: clamp(24px, 3vw, 34px);
+  font-size: clamp(22px, 2.4vw, 28px);
   line-height: 1.2;
 }
 
@@ -199,9 +189,9 @@ a {
 
 .intro {
   max-width: 540px;
-  margin: 30px 0 0;
+  margin: 24px 0 0;
   font-family: var(--serif);
-  font-size: 19px;
+  font-size: 17px;
   line-height: 1.65;
 }
 
@@ -209,7 +199,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 28px;
-  margin-top: 32px;
+  margin-top: 26px;
   padding: 14px 18px;
   color: #fff;
   background: var(--navy);
@@ -230,37 +220,37 @@ a {
 
 .portrait-card {
   position: relative;
-  width: min(100%, 450px);
+  width: min(100%, 340px);
   margin: 0 auto;
-  padding: 16px 16px 0;
+  padding: 12px 12px 0;
 }
 
 .portrait-card::before {
   content: "";
   position: absolute;
   z-index: -2;
-  inset: -24px 42px 80px -24px;
+  inset: -18px 28px 62px -18px;
   border: 1px solid rgba(23, 50, 74, 0.22);
-  border-radius: 48% 48% 18px 18px;
+  border-radius: 12px;
 }
 
 .portrait-accent {
   position: absolute;
   z-index: -1;
-  right: -18px;
-  bottom: 44px;
-  width: 54%;
-  height: 42%;
+  right: -14px;
+  bottom: 38px;
+  width: 46%;
+  height: 34%;
   background: var(--gold);
 }
 
 .portrait-card img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1;
   display: block;
   object-fit: cover;
-  object-position: center top;
-  border-radius: 48% 48% 14px 14px;
+  object-position: center;
+  border-radius: 8px;
   filter: saturate(0.92) contrast(1.02);
 }
 
@@ -311,20 +301,20 @@ a {
 
 .page-intro {
   max-width: 840px;
-  padding: clamp(64px, 9vw, 112px) 0 60px;
+  padding: clamp(48px, 7vw, 76px) 0 46px;
 }
 
 .page-intro h1 {
-  font-size: clamp(58px, 9vw, 104px);
-  line-height: 0.96;
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1;
 }
 
 .page-intro > p:last-child {
   max-width: 620px;
-  margin: 28px 0 0;
+  margin: 20px 0 0;
   color: var(--muted);
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.6;
 }
 
@@ -338,10 +328,10 @@ a {
 .project-card {
   position: relative;
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr) 54px;
+  grid-template-columns: minmax(0, 1fr) 48px;
   align-items: center;
-  gap: 28px;
-  padding: 34px 30px;
+  gap: 24px;
+  padding: 28px 22px;
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--line);
   transition: background 180ms ease;
@@ -351,22 +341,10 @@ a {
   background: rgba(255, 255, 255, 0.36);
 }
 
-.project-number,
-.document-number {
-  color: var(--teal);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
-.project-kicker {
-  margin-bottom: 10px;
-}
-
 .project-card h2 {
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(27px, 4vw, 42px);
+  font-size: clamp(24px, 3vw, 32px);
   font-weight: 600;
   letter-spacing: -0.025em;
 }
@@ -386,7 +364,7 @@ a {
   margin: 12px 0 0;
   color: var(--muted);
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.55;
 }
 
@@ -408,7 +386,13 @@ a {
 }
 
 .project-intro {
-  padding-bottom: 72px;
+  max-width: 780px;
+  padding-bottom: 54px;
+}
+
+.project-intro h1 {
+  font-size: clamp(40px, 4.8vw, 60px);
+  line-height: 1.04;
 }
 
 .document-section {
@@ -427,7 +411,7 @@ a {
 .section-heading h2 {
   margin: 0;
   font-family: var(--serif);
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
 }
 
@@ -439,10 +423,10 @@ a {
 
 .document-card {
   display: grid;
-  grid-template-columns: 54px minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 28px;
-  padding: 28px 24px;
+  gap: 22px;
+  padding: 22px 18px;
   border-top: 1px solid var(--line);
   text-decoration: none;
   transition: background 180ms ease, padding 180ms ease;
@@ -465,7 +449,7 @@ a {
 
 .document-copy strong {
   font-family: var(--serif);
-  font-size: clamp(21px, 3vw, 29px);
+  font-size: clamp(20px, 2.4vw, 24px);
   font-weight: 600;
 }
 
@@ -473,7 +457,7 @@ a {
   max-width: 690px;
   color: var(--muted);
   font-family: var(--serif);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -492,25 +476,25 @@ a {
   }
 
   .hero h1 {
-    font-size: clamp(68px, 20vw, 112px);
+    font-size: clamp(50px, 14vw, 72px);
   }
 
   .portrait-card {
-    width: min(88%, 450px);
+    width: min(80%, 340px);
   }
 
   .project-card {
-    grid-template-columns: 48px minmax(0, 1fr) 44px;
+    grid-template-columns: minmax(0, 1fr) 44px;
     gap: 18px;
     padding-inline: 12px;
   }
 
   .document-card {
-    grid-template-columns: 38px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
   }
 
   .document-format {
-    grid-column: 2;
+    grid-column: auto;
   }
 }
 
@@ -542,7 +526,7 @@ a {
   }
 
   .hero h1 {
-    font-size: clamp(64px, 22vw, 96px);
+    font-size: clamp(46px, 15vw, 64px);
   }
 
   .role {
@@ -567,11 +551,11 @@ a {
   }
 
   .page-intro h1 {
-    font-size: 52px;
+    font-size: 42px;
   }
 
   .project-card {
-    grid-template-columns: 36px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     padding-block: 26px;
   }
 
