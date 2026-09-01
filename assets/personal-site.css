@@ -264,7 +264,7 @@ a:focus-visible {
 .section-heading {
   display: flex;
   align-items: baseline;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-bottom: 4px;
 }
 
