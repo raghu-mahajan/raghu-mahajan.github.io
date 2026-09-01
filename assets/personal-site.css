@@ -178,20 +178,6 @@ a:focus-visible {
   text-decoration: underline;
 }
 
-.site-footer {
-  border-top: 1px solid var(--line);
-}
-
-.footer-inner {
-  min-height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
 .page-main {
   min-height: calc(100vh - 133px);
   padding-block: 30px 72px;
@@ -371,13 +357,6 @@ a:focus-visible {
     justify-self: start;
   }
 
-  .footer-inner {
-    min-height: 78px;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 3px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
