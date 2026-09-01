@@ -272,22 +272,14 @@ a:focus-visible {
 }
 
 .document-section {
-  padding-top: 28px;
-  border-top: 1px solid var(--line);
+  padding-top: 0;
 }
 
 .section-heading {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 14px;
-}
-
-.section-heading h2 {
-  margin: 0;
-  font-size: 21px;
-  font-weight: 700;
+  justify-content: flex-end;
+  margin-bottom: 4px;
 }
 
 .section-heading span {
@@ -301,13 +293,8 @@ a:focus-visible {
   align-items: center;
   gap: 24px;
   padding: 18px 0;
-  border-top: 1px solid var(--line);
   color: var(--ink);
   text-decoration: none;
-}
-
-.document-list li:last-child .document-card {
-  border-bottom: 1px solid var(--line);
 }
 
 .document-card:hover .document-copy strong,
