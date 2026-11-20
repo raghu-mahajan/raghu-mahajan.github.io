@@ -5,12 +5,23 @@ This repository publishes the personal website at <https://raghu-mahajan.github.
 ## Structure
 
 - `/` — personal landing page
-- `/projects/` — index of current projects
-- `/cv/cv.pdf` — the CV, served by GitHub Pages from the separate repository `raghu-mahajan/cv`
-- `/projects/type-iib-instantons/` — document collection for *Instantons in Type IIB String Theory*
 - `/problems/` — *Open Problems in String Theory*, a public list anyone can add to (see below)
+- `/cv/cv.pdf` — the CV, served by GitHub Pages from the separate repository `raghu-mahajan/cv`
+
+### Unpublished: `projects/`
+
+The `projects/` folder (a project index, and the *Instantons in Type IIB String Theory* page) is kept in this repository but **not published**: `_config.yml` excludes it from the GitHub Pages build, so `/projects/` returns "not found". The repository itself is public, so the files can still be read on GitHub.
+
+To publish the projects again:
+
+1. Remove `projects` from the `exclude` list in `_config.yml`.
+2. Add `<li><a href="/projects/">Projects</a></li>` back to the navigation in each page's header.
 
 Each future project can be added as its own directory under `projects/`, and each project page can link to any number of HTML documents.
+
+### How the site is built
+
+GitHub Pages builds the site with Jekyll, using `_config.yml`. None of the HTML, CSS or JS files has Jekyll front matter, so they are published exactly as they are.
 
 ## Open Problems page (`/problems/`)
 

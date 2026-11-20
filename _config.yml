@@ -1,0 +1,8 @@
+# GitHub Pages builds this site with Jekyll. The HTML, CSS and JS files have no
+# Jekyll front matter, so they are published exactly as they are.
+#
+# Everything listed under `exclude` stays in this repository but is NOT
+# published on the website.
+exclude:
+  - projects     # project pages, kept private for now
+  - README.md
