@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A public list of string theory problems that people would like to see solved, created by the participants of the ICTS Worldsheet String Theory and String Field Theory Workshop in November 2026. Anyone can add a problem.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Open Problems in String Theory">
+  <meta property="og:description" content="A public list of string theory problems that people would like to see solved. Anyone can add a problem.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://raghu-mahajan.github.io/problems/">
+  <title>Open Problems in String Theory — Raghu Mahajan</title>
+  <link rel="stylesheet" href="/assets/personal-site.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css" integrity="sha512-aOFyMMzZF7l7ei3vOKgQiRhZnYqk9YC/uMzl4T0j5N5D3Kul+QAFU8ssENDRMAqr/lxDOjMF69dSYJ8HYqY+WQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js" integrity="sha512-UPFOadao2nEorjtjl0xUTtN3w20Ja143UPEU6EyJ1mi5MB2bDtMkiWmqGDqi47xNLB5z1dy31GKJDEWhjUJFiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js" integrity="sha512-YJVxTjqttjsU3cSvaTRqsSl0wbRgZUNF+NGGCgto/MUbIvaLdXQzGTCQu4CvyJZbZctgflVB0PXw9LLmTWm5/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="/problems/config.js"></script>
+  <script defer src="/problems/problems.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="Raghu Mahajan home">
+        <span>Raghu Mahajan</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="/projects/">Projects</a></li>
+          <li><a class="active" href="/problems/" aria-current="page">Open Problems</a></li>
+          <li><a href="/cv/cv.pdf">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="shell page-main problems-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span><span>Open Problems</span>
+    </nav>
+
+    <header class="page-intro">
+      <h1>Open Problems in String Theory</h1>
+      <p class="page-lede">A public list of string theory problems that people would like to see solved. Anyone is welcome to add one.</p>
+      <p class="page-lede">This list was created by the participants of the <a href="https://icts.res.in/program/wstsft">ICTS Worldsheet String Theory and String Field Theory Workshop</a> in November&nbsp;2026.</p>
+    </header>
+
+    <aside class="etiquette" aria-labelledby="etiquette-title">
+      <h2 id="etiquette-title">If you work on one of these problems</h2>
+      <p>Anyone who tackles a problem from this list is expected to contact the person who posted it if they make progress. We can't enforce this, but it is the right thing to do.</p>
+    </aside>
+
+    <noscript>
+      <p class="list-status">This page needs JavaScript to show and add problems.</p>
+    </noscript>
+
+    <div class="problem-toolbar">
+      <div class="search-field">
+        <label class="visually-hidden" for="problem-search">Search problems</label>
+        <svg class="search-icon" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="8.5" cy="8.5" r="5.75" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M13 13l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <input id="problem-search" type="search" placeholder="Search by keyword, topic or name" autocomplete="off" spellcheck="false">
+      </div>
+      <button class="action-button" id="add-toggle" type="button" aria-expanded="false" aria-controls="add-panel">Add a problem</button>
+    </div>
+    <p class="result-count" id="result-count" aria-live="polite"></p>
+
+    <section class="add-panel" id="add-panel" aria-labelledby="add-title" hidden>
+      <h2 id="add-title">Add a problem</h2>
+      <form id="problem-form">
+        <div class="field">
+          <label for="f-title">Problem</label>
+          <input id="f-title" name="title" type="text" required maxlength="200" placeholder="A one-line statement of the problem">
+        </div>
+
+        <div class="field">
+          <label for="f-description">Description</label>
+          <textarea id="f-description" name="description" rows="7" required maxlength="5000" aria-describedby="f-description-hint"></textarea>
+          <p class="hint" id="f-description-hint">Explain the problem and why it is interesting. References are welcome (e.g. arXiv:2101.00001). LaTeX between <code>$…$</code> or <code>$$…$$</code> is rendered.</p>
+        </div>
+
+        <div class="field-pair">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" required maxlength="120" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-email">Preferred email address</label>
+            <input id="f-email" name="email" type="email" required maxlength="200" autocomplete="email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-profile">INSPIRE or Google Scholar page <span class="optional">(optional)</span></label>
+          <input id="f-profile" name="profile" type="text" inputmode="url" maxlength="300" autocomplete="url" placeholder="https://inspirehep.net/authors/…" aria-describedby="f-profile-hint">
+          <p class="hint" id="f-profile-hint">Helps readers know who you are academically.</p>
+        </div>
+
+        <label class="consent">
+          <input name="consent" type="checkbox" required>
+          <span>I agree that my name, email address and profile link will be shown publicly on this page.</span>
+        </label>
+
+        <div class="honeypot" aria-hidden="true">
+          <label for="f-hp">Leave this field empty</label>
+          <input id="f-hp" name="hp" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-actions">
+          <button class="primary-button" id="problem-submit" type="submit">Post problem</button>
+          <button class="text-button" id="problem-cancel" type="button">Cancel</button>
+        </div>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <p class="hint">To correct or remove a problem you posted, please contact Raghu Mahajan.</p>
+      </form>
+    </section>
+
+    <p class="list-notice" id="list-notice" role="status" hidden></p>
+
+    <section aria-label="Problems">
+      <ol class="problem-list" id="problem-list"></ol>
+      <p class="list-status" id="list-status">Loading problems…</p>
+    </section>
+  </main>
+
+</body>
+</html>
