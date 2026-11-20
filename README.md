@@ -17,8 +17,11 @@ Each future project can be added as its own directory under `projects/`, and eac
 A public list of string theory problems, started at the ICTS Worldsheet String Theory and String Field Theory Workshop (November 2026). Anyone can add a problem with their name, email address and, optionally, an INSPIRE or Google Scholar link. Entries are stored in a Google Sheet. A small Google Apps Script ([`problems/backend/Code.gs`](problems/backend/Code.gs)) serves them to the page and saves new ones.
 
 - `problems/index.html` is the page.
+- `problems/problems.css` holds the page's own styles.
 - `problems/problems.js` loads, searches and posts problems. LaTeX is rendered with KaTeX.
 - `problems/config.js` holds the Apps Script web-app URL.
+
+GitHub Pages lets browsers reuse cached CSS and JS files for 10 minutes. So the HTML loads them with a version suffix, such as `problems.css?v=20261120`. When you change a CSS or JS file, update that suffix in the HTML that loads it, so visitors get the new file immediately.
 
 ### One-time setup
 

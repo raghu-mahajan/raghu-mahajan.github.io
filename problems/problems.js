@@ -356,6 +356,13 @@
     setFormStatus('');
   }
 
+  // Let the description box grow with its text (CSS caps it at 70% of the window height).
+  function fitDescription() {
+    const box = fields.description;
+    box.style.height = 'auto';
+    box.style.height = box.scrollHeight + 2 + 'px';
+  }
+
   function checkProfile() {
     const value = fields.profile.value.trim();
     fields.profile.setCustomValidity(
@@ -417,6 +424,8 @@
   });
   els.form.addEventListener('submit', submitProblem);
   fields.profile.addEventListener('input', () => fields.profile.setCustomValidity(''));
+  fields.description.addEventListener('input', fitDescription);
+  els.form.addEventListener('reset', () => { fields.description.style.height = ''; });
   els.search.addEventListener('input', applyFilter);
 
   window.addEventListener('hashchange', () => {
