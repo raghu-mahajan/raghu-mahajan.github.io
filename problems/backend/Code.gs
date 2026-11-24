@@ -8,6 +8,8 @@
  * Moderation: to hide an entry from the page, type anything (e.g. "x") in its
  * "Hide" column. To remove it completely, delete the row.
  *
+ * Anonymous problems are stored with empty Name, Email and Profile cells.
+ *
  * Keep the first eight columns in the order below; you may add your own
  * columns to the right of them.
  */
@@ -20,6 +22,10 @@ const LIMITS = { title: 200, description: 5000, name: 120, email: 200, profile: 
 
 // Upper bound on posts from everyone combined, to stop a spam flood.
 const MAX_POSTS_PER_HOUR = 100;
+
+// Reported to the page so it can tell which features this script supports.
+// Version 2 added anonymous posting.
+const BACKEND_VERSION = 2;
 
 /** Run once from the Apps Script editor to create the sheet and grant access. */
 function setup() {
@@ -39,7 +45,7 @@ function doGet() {
         if (problem.id && problem.title) problems.push(problem);
       });
     }
-    return json_({ ok: true, problems: problems });
+    return json_({ ok: true, version: BACKEND_VERSION, problems: problems });
   } catch (err) {
     console.error(err);
     return json_({ ok: false, error: 'The list could not be loaded.' });
@@ -60,14 +66,16 @@ function doPost(e) {
   // Honeypot: a field hidden from people that simple bots fill in.
   if (data.website) return json_({ ok: true, ignored: true });
 
+  // An anonymous problem keeps no name or contact details at all.
+  const anonymous = data.anonymous === true;
   const entry = {
     title: singleLine_(data.title),
     description: multiLine_(data.description),
-    name: singleLine_(data.name),
-    email: singleLine_(data.email),
-    profile: normaliseUrl_(singleLine_(data.profile)),
+    name: anonymous ? '' : singleLine_(data.name),
+    email: anonymous ? '' : singleLine_(data.email),
+    profile: anonymous ? '' : normaliseUrl_(singleLine_(data.profile)),
   };
-  const problem = validate_(entry, data.consent === true);
+  const problem = validate_(entry, data.consent === true, anonymous);
   if (problem) return json_({ ok: false, error: problem });
 
   const lock = LockService.getScriptLock();
@@ -149,13 +157,14 @@ function rowToProblem_(row) {
   };
 }
 
-function validate_(entry, consent) {
+function validate_(entry, consent, anonymous) {
   if (!entry.title) return 'Please give the problem a title.';
   if (!entry.description) return 'Please describe the problem.';
-  if (!entry.name) return 'Please enter your name.';
-  if (!entry.email) return 'Please enter your email address.';
   if (entry.title.length > LIMITS.title) return 'The title is too long (at most ' + LIMITS.title + ' characters).';
   if (entry.description.length > LIMITS.description) return 'The description is too long (at most ' + LIMITS.description + ' characters).';
+  if (anonymous) return '';
+  if (!entry.name) return 'Please enter your name.';
+  if (!entry.email) return 'Please enter your email address.';
   if (entry.name.length > LIMITS.name) return 'The name is too long.';
   if (entry.email.length > LIMITS.email || !/^[^\s@<>"',;]+@[^\s@<>"',;]+\.[^\s@<>"',;]+$/.test(entry.email)) {
     return 'Please enter a valid email address.';

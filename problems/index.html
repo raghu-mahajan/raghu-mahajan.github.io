@@ -11,12 +11,12 @@
   <meta property="og:url" content="https://raghu-mahajan.github.io/problems/">
   <title>Open Problems in String Theory — Raghu Mahajan</title>
   <link rel="stylesheet" href="/assets/personal-site.css?v=20261120">
-  <link rel="stylesheet" href="/problems/problems.css?v=20261120">
+  <link rel="stylesheet" href="/problems/problems.css?v=20261123">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css" integrity="sha512-aOFyMMzZF7l7ei3vOKgQiRhZnYqk9YC/uMzl4T0j5N5D3Kul+QAFU8ssENDRMAqr/lxDOjMF69dSYJ8HYqY+WQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js" integrity="sha512-UPFOadao2nEorjtjl0xUTtN3w20Ja143UPEU6EyJ1mi5MB2bDtMkiWmqGDqi47xNLB5z1dy31GKJDEWhjUJFiQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js" integrity="sha512-YJVxTjqttjsU3cSvaTRqsSl0wbRgZUNF+NGGCgto/MUbIvaLdXQzGTCQu4CvyJZbZctgflVB0PXw9LLmTWm5/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="/problems/config.js?v=20261120"></script>
-  <script defer src="/problems/problems.js?v=20261120"></script>
+  <script defer src="/problems/problems.js?v=20261123"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -47,7 +47,7 @@
 
     <aside class="etiquette" aria-labelledby="etiquette-title">
       <h2 id="etiquette-title">If you work on one of these problems</h2>
-      <p>Anyone who tackles a problem from this list is expected to contact the person who posted it if they make progress. We can't enforce this, but it is the right thing to do.</p>
+      <p>Anyone who tackles a problem from this list is expected to contact the person who posted it if they make progress (unless it was posted anonymously). We can't enforce this, but it is the right thing to do.</p>
     </aside>
 
     <noscript>
@@ -69,7 +69,7 @@
 
     <section class="add-panel" id="add-panel" aria-labelledby="add-title" hidden>
       <h2 id="add-title">Add a problem</h2>
-      <p class="hint panel-intro">All fields are required except the profile link.</p>
+      <p class="hint panel-intro">All fields are required unless marked optional.</p>
       <form id="problem-form">
         <div class="field">
           <label for="f-title">Problem</label>
@@ -82,27 +82,40 @@
           <p class="hint" id="f-description-hint">Explain the problem and why it is interesting. References are welcome (e.g. arXiv:2101.00001). LaTeX between <code>$…$</code> or <code>$$…$$</code> is rendered.</p>
         </div>
 
-        <div class="field-pair">
-          <div class="field">
-            <label for="f-name">Your name</label>
-            <input id="f-name" name="name" type="text" required maxlength="120" autocomplete="name">
-          </div>
-          <div class="field">
-            <label for="f-email">Preferred email address</label>
-            <input id="f-email" name="email" type="email" required maxlength="200" autocomplete="email">
-          </div>
+        <h3 class="form-subhead">About you</h3>
+
+        <div class="anonymous-option" id="anonymous-option" hidden>
+          <label class="consent" for="f-anonymous">
+            <input id="f-anonymous" name="anonymous" type="checkbox" aria-describedby="f-anonymous-hint">
+            <span>Post anonymously</span>
+          </label>
+          <p class="hint" id="f-anonymous-hint">Your name and contact details won't be collected, so nobody will be able to contact you about this problem.</p>
         </div>
 
-        <div class="field">
-          <label for="f-profile">INSPIRE or Google Scholar page <span class="optional">(optional)</span></label>
-          <input id="f-profile" name="profile" type="text" inputmode="url" maxlength="300" autocomplete="url" placeholder="https://inspirehep.net/authors/…" aria-describedby="f-profile-hint">
-          <p class="hint" id="f-profile-hint">Helps readers know who you are academically.</p>
-        </div>
+        <fieldset class="author-fields" id="author-fields">
+          <legend class="visually-hidden">Your details</legend>
+          <div class="field-pair">
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" required maxlength="120" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="f-email">Preferred email address</label>
+              <input id="f-email" name="email" type="email" required maxlength="200" autocomplete="email">
+            </div>
+          </div>
 
-        <label class="consent">
-          <input name="consent" type="checkbox" required>
-          <span>I agree that my name, email address and profile link will be shown publicly on this page.</span>
-        </label>
+          <div class="field">
+            <label for="f-profile">INSPIRE or Google Scholar page <span class="optional">(optional)</span></label>
+            <input id="f-profile" name="profile" type="text" inputmode="url" maxlength="300" autocomplete="url" placeholder="https://inspirehep.net/authors/…" aria-describedby="f-profile-hint">
+            <p class="hint" id="f-profile-hint">Helps readers know who you are academically.</p>
+          </div>
+
+          <label class="consent">
+            <input name="consent" type="checkbox" required>
+            <span>I agree that my name, email address and profile link will be shown publicly on this page.</span>
+          </label>
+        </fieldset>
 
         <div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
           <label for="f-hp">Leave this field empty</label>

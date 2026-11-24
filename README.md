@@ -25,7 +25,7 @@ GitHub Pages builds the site with Jekyll, using `_config.yml`. None of the HTML,
 
 ## Open Problems page (`/problems/`)
 
-A public list of string theory problems, started at the ICTS Worldsheet String Theory and String Field Theory Workshop (November 2026). Anyone can add a problem with their name, email address and, optionally, an INSPIRE or Google Scholar link. Entries are stored in a Google Sheet. A small Google Apps Script ([`problems/backend/Code.gs`](problems/backend/Code.gs)) serves them to the page and saves new ones.
+A public list of string theory problems, started at the ICTS Worldsheet String Theory and String Field Theory Workshop (November 2026). Anyone can add a problem with their name, email address and, optionally, an INSPIRE or Google Scholar link, or post it anonymously, in which case no name or contact details are collected. Entries are stored in a Google Sheet. A small Google Apps Script ([`problems/backend/Code.gs`](problems/backend/Code.gs)) serves them to the page and saves new ones.
 
 - `problems/index.html` is the page.
 - `problems/problems.css` holds the page's own styles.
@@ -55,5 +55,7 @@ GitHub Pages lets browsers reuse cached CSS and JS files for 10 minutes. So the 
 The page has a hidden spam-trap field. The script also ignores accidental double posts and accepts at most 100 posts per hour in total (`MAX_POSTS_PER_HOUR` in `Code.gs`).
 
 ### Changing the script later
+
+The script reports a version number (`BACKEND_VERSION` in `Code.gs`), and the page only offers features that version supports. Anonymous posting needs version 2 or later. If the "Post anonymously" option is missing from the form, the deployed script is out of date.
 
 After editing the code in Apps Script, go to **Deploy → Manage deployments**, click the pencil icon, choose **Version: New version**, then click **Deploy**. The URL stays the same, so `config.js` doesn't need to change.

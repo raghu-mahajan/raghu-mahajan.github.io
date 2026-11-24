@@ -13,6 +13,8 @@
     submit: document.getElementById('problem-submit'),
     cancel: document.getElementById('problem-cancel'),
     formStatus: document.getElementById('form-status'),
+    anonOption: document.getElementById('anonymous-option'),
+    authorFields: document.getElementById('author-fields'),
     notice: document.getElementById('list-notice'),
     list: document.getElementById('problem-list'),
     listStatus: document.getElementById('list-status'),
@@ -33,6 +35,9 @@
   };
   const LINK_PATTERN = /\bhttps?:\/\/[^\s<>"]+|\barXiv:\s?(?:\d{4}\.\d{4,5}|[a-z-]+(?:\.[a-z]{2})?\/\d{7})(?:v\d+)?/gi;
   const dateFormat = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+  // The Apps Script reports its version; anonymous posting needs version 2.
+  const ANONYMOUS_SINCE_VERSION = 2;
 
   let entries = [];
   let loaded = false;
@@ -144,7 +149,9 @@
     const title = el('h2', 'problem-title', problem.title);
 
     const meta = el('p', 'problem-meta');
-    meta.append(el('span', 'problem-author', problem.name || 'Anonymous'));
+    meta.append(problem.name
+      ? el('span', 'problem-author', problem.name)
+      : el('span', 'problem-author is-anonymous', 'Anonymous'));
     if (isEmail(problem.email)) {
       const mail = el('a', '', problem.email);
       mail.href = 'mailto:' + problem.email + '?subject=' + encodeURIComponent('Open problems list: ' + problem.title);
@@ -181,7 +188,7 @@
     return {
       problem: problem,
       element: item,
-      haystack: fold([problem.title, problem.description, problem.name, problem.email].join(' ')),
+      haystack: fold([problem.title, problem.description, problem.name || 'Anonymous', problem.email].join(' ')),
     };
   }
 
@@ -297,6 +304,8 @@
       if (!data || !data.ok || !Array.isArray(data.problems)) {
         throw new Error((data && data.error) || 'Unexpected reply from the server.');
       }
+      els.anonOption.hidden = !(Number(data.version) >= ANONYMOUS_SINCE_VERSION);
+      syncAnonymous();
       showProblems(data.problems);
     } catch (err) {
       els.list.replaceChildren();
@@ -356,6 +365,17 @@
     setFormStatus('');
   }
 
+  function isAnonymous() {
+    return !els.anonOption.hidden && fields.anonymous.checked;
+  }
+
+  // Posting anonymously hides the personal fields; disabling them also skips their validation.
+  function syncAnonymous() {
+    const anonymous = isAnonymous();
+    els.authorFields.disabled = anonymous;
+    els.authorFields.hidden = anonymous;
+  }
+
   // Let the description box grow with its text (CSS caps it at 70% of the window height).
   function fitDescription() {
     const box = fields.description;
@@ -379,13 +399,15 @@
       return;
     }
 
+    const anonymous = isAnonymous();
     const payload = {
       title: fields.title.value,
       description: fields.description.value,
-      name: fields.name.value,
-      email: fields.email.value.trim(),
-      profile: normaliseUrl(fields.profile.value.trim()),
-      consent: fields.consent.checked,
+      anonymous: anonymous,
+      name: anonymous ? '' : fields.name.value,
+      email: anonymous ? '' : fields.email.value.trim(),
+      profile: anonymous ? '' : normaliseUrl(fields.profile.value.trim()),
+      consent: !anonymous && fields.consent.checked,
       website: fields.hp.value,
     };
 
@@ -398,7 +420,7 @@
         body: JSON.stringify(payload),
       });
       if (!data || !data.ok) throw new Error((data && data.error) || 'Unexpected reply from the server.');
-      rememberAuthor();
+      if (!anonymous) rememberAuthor();
       els.form.reset();
       closeForm();
       if (window.location.hash === '#add') {
@@ -425,7 +447,11 @@
   els.form.addEventListener('submit', submitProblem);
   fields.profile.addEventListener('input', () => fields.profile.setCustomValidity(''));
   fields.description.addEventListener('input', fitDescription);
-  els.form.addEventListener('reset', () => { fields.description.style.height = ''; });
+  els.form.addEventListener('reset', () => {
+    fields.description.style.height = '';
+    window.setTimeout(syncAnonymous); // the reset event fires before the checkbox is cleared
+  });
+  fields.anonymous.addEventListener('change', syncAnonymous);
   els.search.addEventListener('input', applyFilter);
 
   window.addEventListener('hashchange', () => {
